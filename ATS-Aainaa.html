@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+       <title>{{project.seoTitle}}</title>
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+      
+      <!-- {headerScripts} -->
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+      <!-- Base Styles -->
+      <style>
+      * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari, newer Edge */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Improve text rendering */
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus outline styles */
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <!-- Enhanced Image Handler -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          // Watch for dynamically added images
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          // Create performance observer
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+                // console.log(`LCP: ${entry.startTime}ms`);
+              }
+              if (entry.entryType === 'first-input') {
+                // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+              }
+              if (entry.entryType === 'layout-shift') {
+                // console.log(`CLS: ${entry.value}`);
+              }
+            });
+          });
+
+          // Observe performance metrics
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          // Log basic performance metrics
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="3fc5695a-1afe-4448-a89e-646869eee46d" data-section-id="3fc5695a-1afe-4448-a89e-646869eee46d">
+
+<htmlCode>
+<div id="root">
+  <section id="about" class="min-h-screen bg-gray-50 py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <!-- Profile Image Column -->
+          <div class="lg:w-1/3">
+            <div class="relative">
+              <img src="https://avatar.iran.liara.run/public/256" alt="Profile Picture" class="rounded-full w-64 h-64 mx-auto shadow-lg" />
+              <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                Senior Solution Engineer
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:w-2/3">
+            <h1 class="text-4xl font-bold text-gray-800 mb-6">About Me</h1>
+            
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Senior Solution Engineer with 7+ years of experience in technical documentation, project management, and SDLC processes. Specializing in requirements gathering, system design, and system testing with a strong focus on developing SDLC-compliant materials.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-800 mb-3">Professional Focus</h2>
+                  <ul class="space-y-2">
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Technical Documentation
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Project Management
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      System Design
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-800 mb-3">Languages</h2>
+                  <ul class="space-y-2">
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      English (Written & Verbal)
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Bahasa Malaysia (Written & Verbal)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">Requirements Analysis</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">System Design</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">Technical Writing</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">Project Management</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">Data Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="dd906be6-2a46-491b-b525-639b10bf5e45" data-section-id="dd906be6-2a46-491b-b525-639b10bf5e45">
+
+<htmlCode>
+<div id="root">
+  <section id="skills" class="min-h-screen bg-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Skills & Tools</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Expertise -->
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">Technical Expertise</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Requirements Analysis
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                System Design
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                ETL Processes
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Data Analysis
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Python
+              </li>
+            </ul>
+          </div>
+
+          <!-- Documentation Tools -->
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">Documentation Tools</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Microsoft Office Suite
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Draw.io
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Canva
+              </li>
+            </ul>
+          </div>
+
+          <!-- Project Management -->
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">Project Management</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Kanban Boards
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Trello
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Miro
+              </li>
+            </ul>
+          </div>
+
+          <!-- Data Tools -->
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">Data Tools</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Elastic Stack
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Elasticsearch
+              </li>
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Kibana
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="mt-12 bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-6">Professional Skills</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700 font-medium">Communication</span>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700 font-medium">Problem Solving</span>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700 font-medium">Leadership</span>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700 font-medium">Innovation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="031b83c3-4950-4f24-b0fc-349af24c0b26" data-section-id="031b83c3-4950-4f24-b0fc-349af24c0b26">
+
+<htmlCode>
+<div id="root">
+  <section id="casestudies" class="min-h-screen bg-gray-50 py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Case Studies & Projects</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Ollama Project -->
+          <div class="bg-white rounded-xl p-8 border border-gray-100 hover:border-blue-200 transition-colors duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Ollama Project - R&D Initiative</h3>
+                <p class="text-gray-600 mb-4">Led proof-of-concept development for text and image analysis, delivering actionable insights for decision-making.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Machine Learning</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Text Analysis</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Image Analysis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documentation Process -->
+          <div class="bg-white rounded-xl p-8 border border-gray-100 hover:border-blue-200 transition-colors duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Documentation Process Revamp</h3>
+                <p class="text-gray-600 mb-4">Created 30+ technical documents and enhanced team efficiency through improved documentation quality and workflow optimization.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Technical Writing</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Process Improvement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HR System -->
+          <div class="bg-white rounded-xl p-8 border border-gray-100 hover:border-blue-200 transition-colors duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">HR Management System</h3>
+                <p class="text-gray-600 mb-4">Developed and implemented a comprehensive HR system for staff promotion and mobility tracking, streamlining administrative processes.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">System Development</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Process Automation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Engineering -->
+          <div class="bg-white rounded-xl p-8 border border-gray-100 hover:border-blue-200 transition-colors duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">ETL Process Optimization</h3>
+                <p class="text-gray-600 mb-4">Enhanced Machine Learning outcomes through optimized ETL processes using Python and Elasticsearch, improving data accuracy and accessibility.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Data Engineering</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Python</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Elasticsearch</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="9da9fb7a-a19e-41b5-acad-bba96de9d63e" data-section-id="9da9fb7a-a19e-41b5-acad-bba96de9d63e">
+
+<htmlCode>
+<div id="root">
+  <section id="documents" class="min-h-screen bg-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Documents & Certifications</h2>
+
+        <!-- Certifications -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-8">Professional Certifications</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-800 mb-2">Machine Learning Bootcamp</h4>
+                  <p class="text-gray-600 text-sm mb-2">Google Developer Group KL (2019)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-800 mb-2">CPRE Foundation Level</h4>
+                  <p class="text-gray-600 text-sm mb-2">Requirements Engineering (2015)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-800 mb-2">CCNA Exploration</h4>
+                  <p class="text-gray-600 text-sm mb-2">Network Fundamentals (2013)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Training & Conferences -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-8">Training & Conferences</h3>
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-semibold text-gray-800 mb-4">Recent Conferences</h4>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <div>
+                      <h5 class="font-semibold text-gray-800">MongoDB.local (2024)</h5>
+                      <p class="text-gray-600 text-sm">Atlas Search, Generative AI, Data Modeling</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <div>
+                      <h5 class="font-semibold text-gray-800">National Training Week (2023)</h5>
+                      <p class="text-gray-600 text-sm">Data Management & Strategy</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-semibold text-gray-800 mb-4">Professional Development</h4>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    <div>
+                      <h5 class="font-semibold text-gray-800">Technical Writing</h5>
+                      <p class="text-gray-600 text-sm">30+ Technical Documents Created</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    <div>
+                      <h5 class="font-semibold text-gray-800">Project Management</h5>
+                      <p class="text-gray-600 text-sm">Leadership & Process Optimization</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="a33db118-173c-4443-b6fc-4b5b24313dd4" data-section-id="a33db118-173c-4443-b6fc-4b5b24313dd4">
+
+<htmlCode>
+<div id="root">
+  <section id="resume" class="min-h-screen bg-gray-50 py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Professional Experience</h2>
+
+        <!-- Timeline container -->
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-0 md:left-1/2 h-full w-0.5 bg-blue-200 transform -translate-x-1/2"></div>
+
+          <!-- Experience Items -->
+          <div class="space-y-12">
+            <!-- FlyEye Technologies -->
+            <div class="relative">
+              <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:text-right mb-8 md:mb-0 md:pr-8">
+                  <h3 class="text-2xl font-semibold text-gray-800">Senior Solution Engineer</h3>
+                  <div class="text-blue-600 font-medium mb-2">FlyEye Technologies Sdn. Bhd.</div>
+                  <div class="text-gray-600">January 2023 - Present</div>
+                  <div class="text-gray-600">Kuala Lumpur</div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm md:pl-8">
+                  <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Led documentation team and managed business solution documentation
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Spearheaded R&D initiatives including Ollama project
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Managed project lifecycles and resource allocation
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Envy Formula -->
+            <div class="relative">
+              <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:text-right mb-8 md:mb-0 md:pr-8">
+                  <h3 class="text-2xl font-semibold text-gray-800">Junior Solution Engineer</h3>
+                  <div class="text-blue-600 font-medium mb-2">Envy Formula Sdn. Bhd.</div>
+                  <div class="text-gray-600">July 2017 - December 2022</div>
+                  <div class="text-gray-600">Kuala Lumpur</div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm md:pl-8">
+                  <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Authored comprehensive documentation and SOPs
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Managed ETL processes and data engineering tasks
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Conducted system testing and UI reviews
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="relative">
+              <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:text-right mb-8 md:mb-0 md:pr-8">
+                  <h3 class="text-2xl font-semibold text-gray-800">Education</h3>
+                  <div class="text-blue-600 font-medium mb-2">Universiti Malaysia Pahang</div>
+                  <div class="text-gray-600">2013 - 2016</div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm md:pl-8">
+                  <p class="text-gray-800 font-semibold mb-2">Bachelor of Computer Science (Software Engineering)</p>
+                  <p class="text-gray-600">With Honors</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Resume Button -->
+        <div class="mt-16 text-center">
+          <button class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 inline-flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Download Full Resume
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          
